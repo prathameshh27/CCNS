@@ -1,13 +1,24 @@
 import java.util.Scanner;
 
 public class PlayfairCipher {
+    //global data
     static char keepTrack[]={'0','0','0','0','0','0','0','0','0','0','0','0','0',
-            '0','0','0','0','0','0','0','0','0','0','0','0','0'};
+                             '0','0','0','0','0','0','0','0','0','0','0','0','0'},
+                keyMatrix[][]=new char[5][5];
 
-    static char keyMatrix[][]=new char[5][5];
     static int option;
 
+    //displays populated matrix
+    public static void displayMatrix(){
+        System.out.println();
+        for(int i=0; i<5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(keyMatrix[i][j]+"  ");
+            }System.out.println();
+        }
+    }
 
+    //encryption starts here
     public static void playfairCipher(String message, String key){
 
         int index, counter=0;
@@ -50,11 +61,7 @@ public class PlayfairCipher {
         }
 
         //prints keyMatrix
-        for(int i=0; i<5; i++) {
-            for (int j = 0; j < 5; j++) {
-                System.out.print(keyMatrix[i][j]+"  ");
-            }System.out.println();
-        }
+        displayMatrix();
     }
 
 
@@ -64,9 +71,9 @@ public class PlayfairCipher {
 
         //System.out.println("Press 1 for Encryption & 2 for Decryption");
         //option = input.nextInt();
-        //System.out.println("Enter message");
-        //message = input.next();
-        message="";
+        System.out.println("Enter message");
+        message = input.next();
+
         System.out.println("Enter key");
         key = input.next();
         playfairCipher(message, key);

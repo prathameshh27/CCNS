@@ -5,10 +5,10 @@ public class HomeClass {
 
         int option;
         Scanner input = new Scanner(System.in);
-        //System.out.println("1. Caesar Cipher \t 2. Playfair Cipher");
-        //option=input.nextInt();
+        System.out.println("1. Caesar Cipher \t 2. Playfair Cipher");
+        option=input.nextInt();
 
-        switch (2){ //option
+        switch (option){ //option
             case 1:
                 CaesarCipher.init();
                 break;
