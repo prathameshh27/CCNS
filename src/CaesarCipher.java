@@ -8,17 +8,17 @@ public class CaesarCipher {
 
         int index, alteredIndex, mod;
         //for debugging purpose
-        System.out.println("index\tchar\talter\tmod\tchar");
+        //System.out.println("index\tchar\talter\tmod\tchar");
 
         for (int i=0; i<message.length(); i++) {
             index =(int)message.charAt(i)-(int)'a';
             mod=(index+key)%26;
             if(mod<0) mod=26+mod;
             alteredIndex =(int)'a' + mod;
-            //System.out.print((char)alteredIndex);
+            System.out.print((char)alteredIndex);
 
             //for debugging purpose
-            System.out.println(index+"\t"+message.charAt(i)+"\t"+alteredIndex+"\t"+mod+"\t"+(char)alteredIndex);
+            //System.out.println(index+"\t"+message.charAt(i)+"\t"+alteredIndex+"\t"+mod+"\t"+(char)alteredIndex);
 
         }
     }
